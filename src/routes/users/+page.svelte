@@ -1,8 +1,22 @@
 <!-- src/routes/+page.svelte -->
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { SignOut } from '$lib/Repository/Auth/Repository';
+	import { supabase } from '$lib/supabase';
+
 	export let data: { users: { id: number; name: string; email: string }[]; error: string | null }; // Include error in the type
+	const handleLogout = async () => {
+		const result = await SignOut();
+
+		if (result.error) {
+			console.error('Logout Error:', result.error);
+		} else {
+			goto('/login');
+		}
+	};
 </script>
 
+<button class="text-5xl cursor-pointer" on:click={handleLogout}>LOGOUT</button>
 <h1>User List</h1>
 
 <!-- Display the list of users -->
