@@ -1,5 +1,6 @@
+// src/lib/signin.ts
+import { sessionStore } from '$lib/Store';
 import { supabase } from '$lib/supabase';
-import { redirect } from '@sveltejs/kit';
 import type { SignInDto } from '../Dto';
 
 export async function SignIn(payload: SignInDto) {
@@ -13,6 +14,8 @@ export async function SignIn(payload: SignInDto) {
 		return { error: error.message };
 	}
 
-	// Redirect to home page or dashboard on successful sign-in
-	return { user: data.user };
+	// Update the store with the session data
+	sessionStore.set(data.session);
+
+	return { success: true };
 }

@@ -1,5 +1,5 @@
-import type { Actions } from './$types';
 import { supabase } from '$lib/supabase';
+import type { Actions } from '@sveltejs/kit';
 
 export const actions: Actions = {
 	addUser: async ({ request }) => {

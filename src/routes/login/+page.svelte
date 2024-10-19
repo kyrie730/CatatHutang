@@ -21,9 +21,9 @@
 	const handleLogin = async (event: Event) => {
 		event.preventDefault();
 		errorMessage = '';
-		const { user, error } = await SignIn({ email, password });
+		const { success, error } = await SignIn({ email, password });
 		if (error) errorMessage = error;
-		if (user) goto('/users');
+		if (success) goto('/app/users');
 	};
 
 	const checkSession = async (event: Event) => {
