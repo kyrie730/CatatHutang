@@ -35,7 +35,7 @@
 <!-- Display the list of users -->
 <ul>
 	{#each data.users as user}
-		<li>{user.name} - {user.email}</li>
+		<li class="text-primary-500">{user.name} - {user.email}</li>
 	{/each}
 </ul>
 

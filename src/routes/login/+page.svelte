@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { SignIn, SignUp } from '$lib/Repository/Auth/Repository';
 	import { supabase } from '$lib/supabase';
+	import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
 
 	let email = '';
 	let password = '';
@@ -10,6 +11,7 @@
 	let errorMessage = '';
 	let isRegistering = false;
 	let viewPassword = false;
+	const toast = getToastStore();
 
 	const handleRegister = async (event: Event) => {
 		event.preventDefault();
@@ -22,7 +24,13 @@
 		event.preventDefault();
 		errorMessage = '';
 		const { success, error } = await SignIn({ email, password });
-		if (error) errorMessage = error;
+		if (error)
+			toast.trigger({
+				message: `${error}. Please check your email and password.`,
+				hideDismiss: true,
+				timeout: 10000,
+				background: 'variant-filled-error'
+			});
 		if (success) goto('/app/users');
 	};
 
