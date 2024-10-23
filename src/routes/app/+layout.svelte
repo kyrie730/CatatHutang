@@ -26,7 +26,7 @@
 	});
 </script>
 
-<div class="flex flex-col">
+<div class="flex flex-col w-screen">
 	<AppBar class="shadow-2xl z-10">
 		<svelte:fragment slot="lead">
 			<p class="text-2xl font-bold text-primary-700">CatatHutang</p>
@@ -34,13 +34,13 @@
 		<svelte:fragment slot="trail">
 			<div class="flex">
 				<Avatar
-					background="bg-primary-500 h-8 w-8"
+					background="bg-primary-500 h-8 w-8 border border-primary-700"
 					initials={`${displayName[0]?.charAt(0)}${displayName[1]?.charAt(0)}`}
 				/>
 			</div>
 		</svelte:fragment>
 	</AppBar>
-	<div class="flex">
+	<div class="flex w-screen">
 		<AppRail>
 			<AppRailAnchor href="/app/hutang" title="Account" selected={pathname == '/app/hutang'}>
 				<svelte:fragment slot="lead">
@@ -59,7 +59,7 @@
 				</svelte:fragment>
 			</AppRailAnchor>
 		</AppRail>
-		<div class="flex flex-col p-4 bg-surface-500 w-full min-h-screen">
+		<div class="flex flex-col p-6 bg-surface-500 w-full h-[calc(100vh-64px)] overflow-auto">
 			<slot />
 		</div>
 	</div>
