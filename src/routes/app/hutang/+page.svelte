@@ -5,7 +5,7 @@
 	export let data: { events: EventEntity[]; error: string | null };
 </script>
 
-<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-6 card p-6">
 	<div class="flex justify-between">
 		<p class="text-5xl font-bold">List Hutang</p>
 		<button

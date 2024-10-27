@@ -59,7 +59,7 @@
 				</svelte:fragment>
 			</AppRailAnchor>
 		</AppRail>
-		<div class="flex flex-col p-6 bg-surface-500 w-full h-[calc(100vh-64px)] overflow-auto">
+		<div class="flex flex-col p-4 bg-surface-500 w-full h-[calc(100vh-64px)] overflow-auto">
 			<slot />
 		</div>
 	</div>
