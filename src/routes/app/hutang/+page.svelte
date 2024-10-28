@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import type { EventEntity } from '$lib/Repository/Hutang';
+	import { FormatToRupiah } from '$lib/Utils';
 	import moment from 'moment';
-	export let data: { events: EventEntity[]; error: string | null };
+	export let data: { events: EventEntity[] };
 </script>
 
 <div class="flex flex-col gap-6 card p-6">
@@ -27,7 +28,7 @@
 						<p>
 							Tanggal: {moment(events.eventDate).format('DD MMMM YYYY').toString()}
 						</p>
-						<p>Jumlah: Rp350.000,-</p>
+						<p>Jumlah: {FormatToRupiah(events.totalHutang)}</p>
 					</div>
 				</section>
 			</div>{/each}

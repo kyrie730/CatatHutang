@@ -16,11 +16,8 @@
 	$: pathname = $page.url.pathname;
 	onMount(() => {
 		if (!session) {
-			console.log('User is not logged in from layout');
 			goto('/login');
 		} else {
-			console.log('User email:', session.user.email);
-			console.log(session?.user.user_metadata.display_name.split(' '));
 			displayName = session?.user.user_metadata.display_name.split(' ');
 		}
 	});
@@ -42,7 +39,7 @@
 	</AppBar>
 	<div class="flex w-screen">
 		<AppRail>
-			<AppRailAnchor href="/app/hutang" title="Account" selected={pathname == '/app/hutang'}>
+			<AppRailAnchor href="/app/hutang" title="Account" selected={pathname.includes('/app/hutang')}>
 				<svelte:fragment slot="lead">
 					<div class="flex flex-col p-3 items-center">
 						<img src={DebtIcon} alt="hutang" class="w-3/4" />
@@ -50,7 +47,7 @@
 					</div>
 				</svelte:fragment>
 			</AppRailAnchor>
-			<AppRailAnchor href="/app/users" title="Account" selected={pathname == '/app/users'}>
+			<AppRailAnchor href="/app/users" title="Account" selected={pathname.includes('/app/users')}>
 				<svelte:fragment slot="lead">
 					<div class="flex flex-col p-3 items-center">
 						<img src={UserIcon} alt="user" class="w-3/4" />

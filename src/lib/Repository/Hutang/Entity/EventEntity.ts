@@ -1,14 +1,14 @@
 export interface EventEntity {
 	eventName: string;
 	eventDate: Date;
-	totalHutang: string;
+	totalHutang: number;
 	id: string;
 }
 
 export interface EventModel {
 	event_name: string;
 	created_at: Date;
-	total: string;
+	total: number;
 	id: string;
 }
 

@@ -1,4 +1,4 @@
-import { DeleteEvent } from '$lib/Repository/Hutang/Repository/DeleteEvent';
+import { DeleteEvent } from '$lib/Repository/Hutang';
 import { redirect, type Actions, error } from '@sveltejs/kit';
 
 export const actions: Actions = {

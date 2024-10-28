@@ -20,13 +20,13 @@
 	let session = get(sessionStore);
 
 	// Example usage: show user's email if logged in
-	onMount(() => {
-		if (!session) {
-			console.log('User is not logged in');
-		} else {
-			console.log('User email:', session.user.email);
-		}
-	});
+	// onMount(() => {
+	// 	if (!session) {
+	// 		console.log('User is not logged in');
+	// 	} else {
+	// 		console.log('User email:', session.user.email);
+	// 	}
+	// });
 </script>
 
 <button class="text-5xl cursor-pointer" on:click={handleLogout}>LOGOUT</button>
