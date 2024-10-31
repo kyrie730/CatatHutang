@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-	import { initializeStores, Toast } from '@skeletonlabs/skeleton';
+	import { initializeStores, Toast, Modal } from '@skeletonlabs/skeleton';
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 
@@ -15,4 +15,6 @@
 </script>
 
 <Toast position="t" />
+<Modal />
+
 <slot />

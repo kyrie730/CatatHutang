@@ -8,10 +8,10 @@
 
 <div class="flex flex-col gap-6 card p-6">
 	<div class="flex justify-between">
-		<p class="text-5xl font-bold">List Hutang</p>
+		<p class="text-5xl font-bold">List Event</p>
 		<button
 			class="btn variant-filled-primary font-bold border border-primary-700"
-			on:click={() => goto('/app/hutang/create')}>+ Add Event</button
+			on:click={() => goto('/app/hutang/create')}>+ Tambah Event</button
 		>
 	</div>
 	{#if data.events.length > 0}
